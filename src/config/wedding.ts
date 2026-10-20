@@ -7,7 +7,7 @@ export const COUPLE_NAMES = `${BRIDE_NAME} & ${GROOM_NAME}`;
  * Google Apps Script Web App URL that saves RSVPs into the couple's Google Sheet.
  * Paste the URL from Deploy > New deployment (see google-apps-script/SETUP.md).
  */
-export const RSVP_SCRIPT_URL = '';
+export const RSVP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzGYTjz5A-W6K1srF5-b8Y3_pfDsa6AGXwppmosezlrTqZQIQxptZ2Lrl0ozEQS4Gu8/exec';
 
 export type GuestPrefix = 'Mr.' | 'Mrs.' | 'Miss' | 'Mr. & Mrs.' | 'Family' | 'Dear';
 
