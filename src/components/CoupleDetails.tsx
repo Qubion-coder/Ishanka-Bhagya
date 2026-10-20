@@ -88,7 +88,7 @@ export const CoupleDetails: React.FC = () => {
               whileHover={{ scale: 1.05, rotate: 2, zIndex: 10 }}
               className="relative w-full h-full rounded-t-full rounded-br-3xl rounded-bl-lg overflow-hidden shadow-[0_15px_30px_rgba(181,128,111,0.2)] border-[3px] border-white transform translate-y-6 sm:translate-y-8 transition-all duration-500"
             >
-              <img src="/pre/WhatsApp Image 2026-10-15 at 18.49.44.jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/pre/WhatsApp Image 2026-10-15 at 09.35.12.jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover object-[center_40%]" />
               <div className="absolute inset-0 bg-brand-plum/10 mix-blend-overlay"></div>
             </motion.div>
 
