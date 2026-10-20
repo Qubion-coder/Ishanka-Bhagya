@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Music, VolumeX, Heart } from 'lucide-react';
+import { Music, VolumeX } from 'lucide-react';
 import { Hero } from './Hero';
 import { CoupleDetails } from './CoupleDetails';
 import { CeremonyDetails } from './CeremonyDetails';
@@ -19,6 +19,7 @@ interface InvitationContentProps {
   weddingDate: Date;
   isMusicPlaying: boolean;
   onToggleMusic: () => void;
+  onIntroStart: () => void;
 }
 
 export function InvitationContent({
@@ -29,6 +30,7 @@ export function InvitationContent({
   weddingDate,
   isMusicPlaying,
   onToggleMusic,
+  onIntroStart,
 }: InvitationContentProps) {
   if (!active) return null;
 
@@ -44,7 +46,7 @@ export function InvitationContent({
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.5, duration: 0.6 }}
         onClick={onToggleMusic}
-        className="fixed top-6 right-6 z-50 w-12 sm:w-14 h-12 sm:h-14 bg-white/70 backdrop-blur-md rounded-full shadow-[0_8px_30px_rgba(176,137,104,0.15)] flex items-center justify-center border border-brand-lavender/50 text-brand-plum hover:scale-105 transition-all duration-300"
+        className="fixed top-6 right-6 z-50 w-12 sm:w-14 h-12 sm:h-14 bg-[#FFFBF3]/80 backdrop-blur-md rounded-full shadow-[0_8px_30px_rgba(183,110,121,0.25)] flex items-center justify-center border border-[#B76E79]/40 ring-4 ring-[#F6CDB5]/30 text-brand-plum hover:scale-105 transition-all duration-300"
       >
         {isMusicPlaying ? (
           <Music className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -53,7 +55,7 @@ export function InvitationContent({
         )}
       </motion.button>
 
-      <Hero event={eventParam} inviteeName={fullInviteeName} />
+      <Hero event={eventParam} inviteeName={fullInviteeName} onIntroStart={onIntroStart} />
 
       {fullInviteeName && (
         <DeferredMount active={active} delay={80}>
@@ -69,7 +71,7 @@ export function InvitationContent({
       </DeferredMount>
 
       <DeferredMount active={active} delay={180} minHeight="40vh">
-        <div className="py-24 sm:py-32 bg-white relative overflow-hidden">
+        <div className="py-24 sm:py-32 bg-gradient-to-b from-brand-blush via-[#FFF6EE] to-brand-blush relative overflow-hidden">
           <CeremonyDetails event={eventParam} />
         </div>
       </DeferredMount>
@@ -85,7 +87,7 @@ export function InvitationContent({
       </DeferredMount>
 
       <DeferredMount active={active} delay={360} minHeight="20vh">
-        <div className="py-24 sm:py-32 relative overflow-hidden bg-[#FDFBF7]">
+        <div className="py-24 sm:py-32 relative overflow-hidden bg-[#FFF8EE]">
           <div className="relative z-10">
             <Countdown targetDate={weddingDate} />
           </div>
@@ -101,22 +103,27 @@ export function InvitationContent({
 
 
       <DeferredMount active={active} delay={520}>
-        <footer className="py-12 bg-white border-t border-brand-lavender/20 text-center relative overflow-hidden mt-10">
+        <footer className="py-12 bg-gradient-to-b from-brand-blush to-[#FBE2D2]/70 border-t border-brand-lavender/40 text-center relative overflow-hidden mt-10">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-lavender/10 blur-[80px] rounded-full pointer-events-none" />
-          <Heart className="w-6 h-6 mx-auto mb-6 text-brand-plum fill-brand-lavender/20" />
-          <p className="font-names text-4xl sm:text-5xl text-stone-800 mb-2">Warsha & Mennan</p>
+          <img
+            src="/WhatsApp_Image_2026-10-14_at_20.56.04__1_-removebg-preview.png"
+            alt="Ishanka & Bhagya monogram"
+            loading="lazy"
+            className="relative w-32 sm:w-40 h-auto mx-auto mb-4"
+          />
+          <p className="font-names text-4xl sm:text-5xl text-rose-gold mb-2">Ishanka & Bhagya</p>
           <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.4em] font-sans text-stone-400 font-semibold block mb-4">
-            October 22, 2026
+            December 11, 2026
           </span>
           
-          <div className="w-12 h-[1px] bg-brand-lavender/30 mx-auto my-6" />
+          <div className="rg-divider my-6"><span /></div>
 
           <p className="text-[9px] sm:text-[10px] font-sans tracking-[0.2em] text-stone-400 uppercase">
             Want a beautiful wedding website like this? <br className="sm:hidden" />Create yours with{' '}
             <a 
               target="_blank" 
               rel="noreferrer" 
-              className="text-[#D4AF37] hover:text-brand-plum font-bold underline decoration-[#D4AF37]/40 hover:decoration-brand-plum/40 underline-offset-4 transition-colors" 
+              className="text-[#C08A7D] hover:text-brand-plum font-bold underline decoration-[#C08A7D]/40 hover:decoration-brand-plum/40 underline-offset-4 transition-colors" 
               href="https://wa.me/94707819074"
             >
               Invitemint

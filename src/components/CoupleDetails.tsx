@@ -15,13 +15,20 @@ export const CoupleDetails: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
+          <img
+            src="/WhatsApp_Image_2026-10-14_at_20.56.04__1_-removebg-preview.png"
+            alt="Ishanka & Bhagya monogram"
+            className="w-44 sm:w-56 h-auto mx-auto mb-4 drop-shadow-sm"
+          />
           <div className="inline-flex items-center gap-4 mb-6 mt-4">
             <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-transparent to-brand-plum/60" />
             <span className="text-brand-plum uppercase tracking-[0.5em] text-[11px] font-semibold font-sans drop-shadow-sm">The Protagonists</span>
             <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-brand-plum/60" />
           </div>
-          <h2 className="text-5xl sm:text-7xl font-names text-stone-800 tracking-tight drop-shadow-sm">
-            Warsha <span className="text-brand-plum font-light mx-2">&</span> Mennan
+          <h2 className="flex flex-col sm:flex-row items-center justify-center sm:gap-4 text-5xl sm:text-7xl font-names text-stone-800 tracking-tight drop-shadow-sm">
+            <span>Ishanka</span>
+            <span className="text-rose-gold font-['Great_Vibes',_cursive] font-normal text-6xl sm:text-8xl leading-none px-2">&</span>
+            <span>Bhagya</span>
           </h2>
         </motion.div>
       </div>
@@ -45,10 +52,10 @@ export const CoupleDetails: React.FC = () => {
           </div>
 
           <div className="mb-4 flex flex-col items-center lg:items-end relative z-10">
-            <span className="text-[#8B6508] uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Groom</span>
-            <h3 className="text-4xl sm:text-5xl font-['Cormorant_Garamond',_serif] text-stone-800 mb-2 drop-shadow-sm">Mennan</h3>
+            <span className="text-[#9A5B62] uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Groom</span>
+            <h3 className="text-4xl sm:text-5xl font-['Cormorant_Garamond',_serif] text-stone-800 mb-2 drop-shadow-sm">Bhagya</h3>
             <p className="text-stone-700 font-century text-xs mb-2"></p>
-            <p className="text-stone-500/90 font-serif italic text-base sm:text-lg">Son of Mr & Mrs Prakash</p>
+            <p className="text-stone-500/90 font-serif italic text-base sm:text-lg">Loving Son of Mr. B.P. Keerthirathna &amp; Mrs. Kumudini Piyadigama</p>
           </div>
           <div className="hidden lg:flex justify-end mt-8 relative z-10">
             <Heart className="w-6 h-6 text-brand-lavender/60 fill-brand-lavender/20 transform hover:scale-110 transition-transform cursor-pointer" />
@@ -70,36 +77,36 @@ export const CoupleDetails: React.FC = () => {
             {/* Top Left - Arch top */}
             <motion.div 
               whileHover={{ scale: 1.05, rotate: -2, zIndex: 10 }}
-              className="relative w-full h-full rounded-t-full rounded-bl-3xl rounded-br-lg overflow-hidden shadow-[0_15px_30px_rgba(176,137,104,0.2)] border-[3px] border-white transform transition-all duration-500"
+              className="relative w-full h-full rounded-t-full rounded-bl-3xl rounded-br-lg overflow-hidden shadow-[0_15px_30px_rgba(183,110,121,0.2)] border-[3px] border-white transform transition-all duration-500"
             >
-              <img src="/pre/1ISI04309.jpg (1).jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/pre/WhatsApp Image 2026-10-15 at 09.35.11.jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-brand-plum/10 mix-blend-overlay"></div>
             </motion.div>
 
             {/* Top Right - Offset down slightly */}
             <motion.div 
               whileHover={{ scale: 1.05, rotate: 2, zIndex: 10 }}
-              className="relative w-full h-full rounded-t-full rounded-br-3xl rounded-bl-lg overflow-hidden shadow-[0_15px_30px_rgba(176,137,104,0.2)] border-[3px] border-white transform translate-y-6 sm:translate-y-8 transition-all duration-500"
+              className="relative w-full h-full rounded-t-full rounded-br-3xl rounded-bl-lg overflow-hidden shadow-[0_15px_30px_rgba(183,110,121,0.2)] border-[3px] border-white transform translate-y-6 sm:translate-y-8 transition-all duration-500"
             >
-              <img src="/pre/ISI03901.JPG.jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/pre/WhatsApp Image 2026-10-15 at 18.49.44.jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-brand-plum/10 mix-blend-overlay"></div>
             </motion.div>
 
             {/* Bottom Left - Arch bottom */}
             <motion.div 
               whileHover={{ scale: 1.05, rotate: -1, zIndex: 10 }}
-              className="relative w-full h-full rounded-b-full rounded-tl-3xl rounded-tr-lg overflow-hidden shadow-[0_15px_30px_rgba(176,137,104,0.2)] border-[3px] border-white transform -translate-y-4 sm:-translate-y-6 transition-all duration-500"
+              className="relative w-full h-full rounded-b-full rounded-tl-3xl rounded-tr-lg overflow-hidden shadow-[0_15px_30px_rgba(183,110,121,0.2)] border-[3px] border-white transform -translate-y-4 sm:-translate-y-6 transition-all duration-500"
             >
-              <img src="/pre/ISI04096.JPG.jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/pre/WhatsApp Image 2026-10-16 at 22.20.27 (1).jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-brand-plum/10 mix-blend-overlay"></div>
             </motion.div>
 
             {/* Bottom Right - Arch bottom */}
             <motion.div 
               whileHover={{ scale: 1.05, rotate: 3, zIndex: 10 }}
-              className="relative w-full h-full rounded-b-full rounded-tr-3xl rounded-tl-lg overflow-hidden shadow-[0_15px_30px_rgba(176,137,104,0.2)] border-[3px] border-white transform transition-all duration-500"
+              className="relative w-full h-full rounded-b-full rounded-tr-3xl rounded-tl-lg overflow-hidden shadow-[0_15px_30px_rgba(183,110,121,0.2)] border-[3px] border-white transform transition-all duration-500"
             >
-              <img src="/pre/ISI04169.JPG.jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/pre/WhatsApp Image 2026-10-16 at 22.20.27.jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-brand-plum/10 mix-blend-overlay"></div>
             </motion.div>
           </div>
@@ -118,10 +125,10 @@ export const CoupleDetails: React.FC = () => {
           className="text-center lg:text-left flex-1 lg:pl-10 order-2 lg:order-3"
         >
           <div className="mb-4 flex flex-col items-center lg:items-start">
-            <span className="text-[#8B6508] uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block mt-28 sm:mt-36 lg:mt-0">The Bride</span>
-            <h3 className="text-4xl sm:text-5xl font-['Cormorant_Garamond',_serif] text-stone-800 mb-2 drop-shadow-sm">Warsha</h3>
+            <span className="text-[#9A5B62] uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block mt-28 sm:mt-36 lg:mt-0">The Bride</span>
+            <h3 className="text-4xl sm:text-5xl font-['Cormorant_Garamond',_serif] text-stone-800 mb-2 drop-shadow-sm">Ishanka</h3>
             <p className="text-stone-700 font-century text-xs mb-2"></p>
-            <p className="text-stone-500/90 font-serif italic text-base sm:text-lg">Daughter of Mr & Mrs Amarasinghe</p>
+            <p className="text-stone-500/90 font-serif italic text-base sm:text-lg">Loving Daughter of Mr. Lal Seelawansha &amp; Mrs. Sandhya Amarathunga</p>
           </div>
           <div className="hidden lg:flex justify-start mt-8">
             <Heart className="w-6 h-6 text-brand-lavender/60 fill-brand-lavender/20 transform hover:scale-110 transition-transform cursor-pointer" />

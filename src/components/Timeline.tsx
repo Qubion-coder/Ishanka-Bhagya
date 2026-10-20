@@ -2,29 +2,31 @@ import React from 'react';
 import { motion } from 'motion/react';
 
 const events = [
-  { time: '09:00', title: 'Guest Arrival', desc: 'Welcome and seating' },
-  { time: '09:15', title: 'Poruwa', desc: 'Traditional ceremony' },
-  { time: '10:30', title: 'Bar Opens', desc: 'Liquor served' },
-  { time: '12:00', title: 'Lunch', desc: 'Wedding feast' },
-  { time: '12:45', title: 'Dancing', desc: 'Join us on the dance floor' },
-  { time: '13:50', title: 'Cake Cutting', desc: 'Sweet celebrations' },
-  { time: '14:00', title: 'Band Playing', desc: 'Live music & jam session' },
-  { time: '15:30', title: 'Grand Exit', desc: 'Send off the newlyweds' },
+  { time: '08:30', period: 'AM', title: 'Celebration Begins', desc: 'Welcome and seating' },
+  { time: '08:42', period: 'AM', title: 'Poruwa Ceremony', desc: 'Traditional ceremony' },
+  { time: '03:30', period: 'PM', title: 'Celebration Ends', desc: 'Send off the newlyweds' },
 ];
 
 export const Timeline = () => {
   return (
-    <div className="bg-[#FDFBF7] pt-24 pb-48 sm:pt-32 sm:pb-64 relative overflow-hidden flex justify-center w-full">
-      {/* Bottom left corner flower */}
-      <img 
-        src="/ChatGPT Image Sep 3, 2026, 03_34_18 AM - Copy.png" 
-        alt="Floral Corner" 
-        className="absolute bottom-0 left-0 w-64 sm:w-96 opacity-90 mix-blend-multiply pointer-events-none z-0" 
+    <div className="bg-gradient-to-b from-brand-blush via-[#FDF0E6] to-brand-blush pt-24 pb-48 sm:pt-32 sm:pb-64 relative overflow-hidden flex justify-center w-full">
+      {/* Corner florals */}
+      <img
+        src="/decor/floral-corner.webp"
+        alt=""
+        loading="lazy"
+        className="absolute bottom-0 left-0 w-60 sm:w-96 opacity-80 pointer-events-none z-0"
+      />
+      <img
+        src="/decor/floral-corner.webp"
+        alt=""
+        loading="lazy"
+        className="absolute top-0 right-0 w-44 sm:w-72 opacity-50 rotate-180 pointer-events-none z-0"
       />
 
       <div className="w-full max-w-2xl mx-auto px-6 relative z-10 flex flex-col items-center">
-        
-        {/* Top middle flower */}
+
+        {/* Rings */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,56 +34,60 @@ export const Timeline = () => {
           transition={{ duration: 0.8 }}
           className="mb-6 flex justify-center"
         >
-          <img 
-            src="/ChatGPT Image Sep 3, 2026, 03_34_18 AM.png" 
-            alt="Floral Top" 
-            className="w-20 sm:w-24 h-auto opacity-90 mix-blend-multiply"
+          <img
+            src="/decor/rings.webp"
+            alt="Wedding rings"
+            loading="lazy"
+            className="w-20 sm:w-24 h-auto"
           />
         </motion.div>
 
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center mb-16 flex flex-col items-center"
+          className="text-center mb-14 flex flex-col items-center"
         >
-          <h2 className="text-4xl sm:text-5xl font-names text-[#2A2416] tracking-wide mb-2">The Day</h2>
+          <span className="uppercase tracking-[0.5em] text-[10px] sm:text-[11px] font-semibold text-[#9A5B62] mb-3">
+            Friday · 11 December 2026
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-names text-rose-gold tracking-wide mb-5">The Day</h2>
+          <div className="rg-divider"><span /></div>
         </motion.div>
 
         {/* Timeline */}
         <div className="relative w-full max-w-md mx-auto">
+          {/* Vertical rose gold thread */}
+          <div className="absolute left-[4.75rem] sm:left-[6rem] top-6 bottom-6 w-px bg-gradient-to-b from-transparent via-[#B76E79]/50 to-transparent" />
+
           {events.map((event, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: idx * 0.1 }}
-              className="relative flex items-start mb-12 last:mb-0 group"
+              transition={{ duration: 0.8, delay: idx * 0.15 }}
+              className="relative flex items-center mb-8 last:mb-0"
             >
               {/* Time */}
-              <div className="w-16 sm:w-20 flex-shrink-0 pt-1 text-right">
-                <span className="font-['Cormorant_Garamond',_serif] text-sm sm:text-base text-[#8B6508] tracking-widest tabular-nums font-semibold">
+              <div className="w-16 sm:w-20 flex-shrink-0 text-right">
+                <span className="block font-['Cormorant_Garamond',_serif] text-xl sm:text-2xl text-[#2A2416] tabular-nums font-semibold leading-none">
                   {event.time}
                 </span>
+                <span className="block text-[9px] tracking-[0.3em] text-[#9A5B62] font-semibold mt-1">{event.period}</span>
               </div>
 
-              {/* Dot and Line Container */}
-              <div className="flex flex-col items-center mx-4 sm:mx-6 relative">
-                {/* Line to next item */}
-                {idx !== events.length - 1 && (
-                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[1px] h-[calc(100%+3rem)] bg-[#D4AF37]/40 group-hover:bg-[#D4AF37]/80 transition-colors duration-500" />
-                )}
-                {/* Dot */}
-                <div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-[#B8860B] relative z-10 ring-[6px] ring-[#FDFBF7]" />
+              {/* Diamond marker */}
+              <div className="flex-shrink-0 w-6 sm:w-8 flex justify-center relative z-10">
+                <span className="w-2.5 h-2.5 rotate-45 bg-gradient-to-br from-[#F6D5C4] to-[#B76E79] ring-4 ring-[#FBE2D2]" />
               </div>
 
               {/* Content */}
-              <div className="flex-1 pb-2">
-                <h3 className="font-['Cormorant_Garamond',_serif] text-xl sm:text-2xl text-[#2A2416] mb-1 font-medium">{event.title}</h3>
-                <p className="text-[11px] sm:text-xs text-[#8B6508]/70 font-sans tracking-wide">{event.desc}</p>
+              <div className="rg-card flex-1 px-5 py-4 sm:px-6 sm:py-5">
+                <h3 className="font-['Cormorant_Garamond',_serif] text-xl sm:text-2xl text-[#2A2416] mb-0.5 font-medium">{event.title}</h3>
+                <p className="text-[11px] sm:text-xs text-[#9A5B62]/80 font-sans tracking-wide">{event.desc}</p>
               </div>
             </motion.div>
           ))}

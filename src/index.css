@@ -2,11 +2,17 @@
 @import "tailwindcss";
 
 @theme {
-  /* White/Green/Orange Color Palette */
-  --color-brand-plum: #b89645;
-  --color-brand-lavender: #C1D5C0;
-  --color-brand-rose: #FDE6D5;
-  --color-brand-blush: #ffffff;
+  /* Ivory / Rose Gold / Peach Color Palette */
+  --color-brand-plum: #B76E79;
+  --color-brand-lavender: #F2C4A8;
+  --color-brand-rose: #FBE2D2;
+  --color-brand-blush: #FFFBF3;
+
+  --color-ivory: #FFFBF3;
+  --color-champagne: #F7EADF;
+  --color-peach: #F6CDB5;
+  --color-rose-gold: #B76E79;
+  --color-rose-gold-deep: #8E4F58;
 
   --font-serif: "Cormorant Garamond", serif;
   --font-display: "Great Vibes", cursive;
@@ -62,4 +68,90 @@ img {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-brand-plum);
+}
+/* ---------- Ivory / Rose Gold / Peach finishing ---------- */
+
+/* Soft paper-like ivory with faint peach light at the edges */
+body {
+  background:
+    radial-gradient(1200px 600px at 0% 0%, rgba(246, 205, 181, 0.18), transparent 60%),
+    radial-gradient(1000px 600px at 100% 100%, rgba(183, 110, 121, 0.10), transparent 60%),
+    var(--color-ivory);
+}
+
+/* Metallic rose gold text, slowly catching the light */
+.text-rose-gold {
+  background: linear-gradient(110deg, #8E4F58 0%, #B76E79 25%, #E8B4A0 45%, #F6D5C4 50%, #E8B4A0 55%, #B76E79 75%, #8E4F58 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rose-gold-sheen 7s ease-in-out infinite;
+}
+
+@keyframes rose-gold-sheen {
+  0%, 100% { background-position: 100% 0; }
+  50% { background-position: 0% 0; }
+}
+
+/* Thin rose gold hairline with a diamond in the middle */
+.rg-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 260px;
+  margin-inline: auto;
+}
+.rg-divider::before,
+.rg-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(183, 110, 121, 0.7));
+}
+.rg-divider::after {
+  background: linear-gradient(270deg, transparent, rgba(183, 110, 121, 0.7));
+}
+.rg-divider > span {
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+  background: linear-gradient(135deg, #E8B4A0, #B76E79);
+  box-shadow: 0 0 0 4px rgba(246, 205, 181, 0.35);
+}
+
+/* Card with a fine rose gold gradient border */
+.rg-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 251, 243, 0.95), rgba(251, 226, 210, 0.55));
+  border-radius: 1.25rem;
+  box-shadow: 0 18px 40px -18px rgba(142, 79, 88, 0.35);
+}
+.rg-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #F6D5C4, #B76E79 40%, #F6CDB5 60%, #8E4F58);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Rose gold pill button */
+.rg-button {
+  background: linear-gradient(135deg, #8E4F58 0%, #B76E79 45%, #D49A8F 100%);
+  color: #FFFBF3;
+  box-shadow: 0 12px 24px -10px rgba(142, 79, 88, 0.6);
+}
+.rg-button:hover {
+  filter: brightness(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-rose-gold { animation: none; }
 }

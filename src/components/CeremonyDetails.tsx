@@ -31,7 +31,7 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
             </div>
 
             <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display text-stone-800 mb-8 leading-[1.1] drop-shadow-sm">
-                <>A Celebration of <br /><span className="italic font-light text-brand-plum">Tradition & Love</span></>
+                <>A Celebration of <br /><span className="italic font-light text-rose-gold pr-2">Tradition & Love</span></>
             </h2>
 
             <p className="text-stone-500/90 font-serif text-lg sm:text-xl leading-relaxed mb-16 max-w-lg">
@@ -43,19 +43,19 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
 
               {/* Date */}
               <div className="relative group flex items-center min-h-[48px]">
-                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(176,137,104,0.3)] transition-all duration-500">
+                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(183,110,121,0.3)] transition-all duration-500">
                   <Calendar className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
                   <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 group-hover:text-brand-plum transition-colors duration-500">
-                    Date: October 22, 2026
+                    Date: Friday, December 11, 2026
                   </h4>
                 </div>
               </div>
 
               {/* Church Ceremony */}
               <div className="relative group">
-                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(176,137,104,0.3)] transition-all duration-500">
+                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(183,110,121,0.3)] transition-all duration-500">
                   <Clock className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
@@ -64,10 +64,10 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                   </h4>
                   <div className="space-y-1.5 text-stone-500/90 font-serif text-base sm:text-lg">
                     <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 09.15 AM
+                      <span className="font-semibold text-stone-700">Time:</span> 08.42 AM (Celebration from 8.30 AM to 3.30 PM)
                     </p>
                     <p className="leading-relaxed">
-                      <span className="font-semibold text-stone-700">Venue:</span> Mahogany Ballroom,<br className="hidden sm:block" /> Cinnamon Grand
+                      <span className="font-semibold text-stone-700">Venue:</span> Royal Peacock Ballroom,<br className="hidden sm:block" /> The Grand Kandyan Hotel, Kandy
                     </p>
                   </div>
                 </div>
@@ -78,7 +78,24 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
           </motion.div>
         </div>
 
-
+        {/* Right Side: Traditional couple illustration */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+          className="lg:w-1/2 w-full flex justify-center relative z-10"
+        >
+          <div className="relative w-64 sm:w-80 lg:w-96">
+            <div className="absolute inset-0 bg-gradient-radial from-brand-rose/70 via-brand-lavender/20 to-transparent rounded-full blur-3xl -z-10" />
+            <img
+              src="/WhatsApp_Image_2026-10-14_at_20.56.04-removebg-preview.png"
+              alt="Traditional Kandyan wedding couple"
+              loading="lazy"
+              className="w-full h-auto drop-shadow-[0_20px_30px_rgba(183,110,121,0.25)]"
+            />
+          </div>
+        </motion.div>
       </div>
     </div>
   );

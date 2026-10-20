@@ -5,6 +5,7 @@ import { ChevronDown } from 'lucide-react';
 interface HeroProps {
   event?: string | null;
   inviteeName?: string;
+  onIntroStart?: () => void;
 }
 
 function usePrefersReducedMotion() {
@@ -31,7 +32,7 @@ function useIsTouchDevice() {
   return touch;
 }
 
-export const Hero: React.FC<HeroProps> = ({ event = 'both', inviteeName }) => {
+export const Hero: React.FC<HeroProps> = ({ event = 'both', inviteeName, onIntroStart }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const reducedMotion = usePrefersReducedMotion();
   const isTouch = useIsTouchDevice();
@@ -42,21 +43,36 @@ export const Hero: React.FC<HeroProps> = ({ event = 'both', inviteeName }) => {
   const scale = useTransform(scrollY, [0, 800], [1, 1.1]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoStarted, setVideoStarted] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
+
+  // Intro waits on its first frame until the guest taps it; the tap also starts the music.
+  const startIntro = () => {
+    const video = videoRef.current;
+    if (!video || videoStarted) return;
+    setVideoStarted(true);
+    onIntroStart?.();
+    video.play().catch(() => setVideoEnded(true));
+  };
 
   return (
     <div ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-brand-blush/30">
       <motion.div
-        className="absolute inset-0 z-0 origin-center"
-        style={useParallax ? { y: y1, scale } : undefined}
+        className={`absolute inset-0 z-0 origin-center ${videoStarted ? '' : 'cursor-pointer'}`}
+        style={useParallax && videoEnded ? { y: y1, scale } : undefined}
+        onClick={startIntro}
       >
         <video
+          ref={videoRef}
           src="/intro.mp4"
+          poster="/intro-poster.jpg"
           className="w-full h-full object-cover"
           style={{ objectPosition: 'center 20%' }}
-          autoPlay
+          preload="auto"
           muted
           playsInline
+          disablePictureInPicture
           onEnded={(e) => {
              // Pauses exactly at the last frame
              e.currentTarget.pause();
@@ -75,7 +91,7 @@ export const Hero: React.FC<HeroProps> = ({ event = 'both', inviteeName }) => {
             transition={{ duration: 1 }}
             className="absolute inset-0 z-10 pointer-events-none"
           >
-            <div className="absolute inset-5 sm:inset-8 border border-brand-plum/30 rounded-3xl shadow-[inset_0_0_30px_rgba(201,169,110,0.1)]" />
+            <div className="absolute inset-5 sm:inset-8 border border-brand-plum/30 rounded-3xl shadow-[inset_0_0_30px_rgba(183,110,121,0.1)]" />
             <div className="absolute inset-6 sm:inset-9 border border-brand-plum/15 rounded-[1.3rem]" />
           </motion.div>
         )}

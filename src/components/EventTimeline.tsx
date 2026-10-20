@@ -3,9 +3,9 @@ import { Heart, MapPin, Utensils, Sparkles, Clock } from 'lucide-react';
 
 const events = [
   {
-    time: '09.15 AM',
+    time: '08.42 AM',
     title: 'Poruwa Ceremony',
-    description: 'The Poruwa Ceremony will commence at Mahogany Ballroom, Cinnamon Grand.',
+    description: 'The Poruwa Ceremony will commence at Royal Peacock Ballroom, The Grand Kandyan Hotel.',
     icon: MapPin,
     color: 'from-blue-500 to-blue-600'
   }
