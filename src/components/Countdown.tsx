@@ -89,10 +89,10 @@ export const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
         className="mt-12 sm:mt-16 w-full max-w-sm mx-auto relative z-10 px-4"
       >
         <img 
-          src="/decor/milk-fountain.webp" 
+          src="/decor/milk-fountain-pour.webp" 
           alt="Traditional milk fountain" 
           loading="lazy"
-          className="w-full h-auto opacity-90"
+          className="w-full h-auto"
         />
       </motion.div>
 
