@@ -65,6 +65,16 @@ export function InvitationContent({
 
       <DeferredMount active={active} delay={120} minHeight="40vh">
         <div className="py-24 sm:py-32 bg-gradient-to-b from-brand-blush via-white to-brand-blush relative overflow-hidden">
+          {/* Faint couple photo watermark, toned to ivory and faded into the section edges */}
+          <div className="absolute inset-x-0 top-0 h-[820px] lg:inset-0 lg:h-auto pointer-events-none" aria-hidden="true">
+            <img
+              src="/pre/WhatsApp Image 2026-10-15 at 18.49.44.jpeg"
+              alt=""
+              loading="lazy"
+              className="w-full h-full object-cover object-[center_35%] opacity-[0.16] grayscale sepia-[0.35]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-brand-blush/80 via-transparent to-brand-blush" />
+          </div>
 
           <CoupleDetails />
         </div>
