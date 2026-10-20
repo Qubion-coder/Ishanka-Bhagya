@@ -71,9 +71,9 @@ export function InvitationContent({
               src="/pre/WhatsApp Image 2026-10-15 at 18.49.44.jpeg"
               alt=""
               loading="lazy"
-              className="w-full h-full object-cover object-[center_35%] opacity-[0.16] grayscale sepia-[0.35]"
+              className="w-full h-full object-cover object-[center_35%] opacity-[0.32] grayscale-[0.4] sepia-[0.3]"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-brand-blush/80 via-transparent to-brand-blush" />
+            <div className="absolute inset-0 bg-gradient-to-b from-brand-blush/50 via-transparent to-brand-blush" />
           </div>
 
           <CoupleDetails />
