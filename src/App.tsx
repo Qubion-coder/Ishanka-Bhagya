@@ -3,19 +3,18 @@ import { Toaster } from 'sonner';
 
 import { InvitationContent } from './components/InvitationContent';
 import { Admin } from './components/Admin';
+import { readGuestDisplayNameFromLocation } from './config/wedding';
 
-const isAdminRoute = () => window.location.pathname === '/admin';
+const isAdminRoute = () => window.location.pathname.replace(/\/+$/, '') === '/admin';
 
 export default function App() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const params = new URLSearchParams(window.location.search);
-  const titleParam = params.get('title') || '';
-  const nameParam = params.get('name') || '';
   const eventParam = params.get('event') || 'both';
 
-  const fullInviteeName = `${titleParam} ${nameParam}`.trim();
+  const fullInviteeName = readGuestDisplayNameFromLocation(window.location);
 
   let eventLabel = 'Our Wedding Celebration';
 

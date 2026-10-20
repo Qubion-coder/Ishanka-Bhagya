@@ -59,7 +59,7 @@ export function InvitationContent({
 
       {fullInviteeName && (
         <DeferredMount active={active} delay={80}>
-          <InviteeBanner inviteeName={fullInviteeName} eventLabel={eventLabel} />
+          <InviteeBanner inviteeName={fullInviteeName} />
         </DeferredMount>
       )}
 

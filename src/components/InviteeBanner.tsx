@@ -4,10 +4,9 @@ import { Sparkles, Heart } from 'lucide-react';
 
 interface InviteeBannerProps {
   inviteeName: string;
-  eventLabel: string;
 }
 
-export const InviteeBanner: React.FC<InviteeBannerProps> = ({ inviteeName, eventLabel }) => {
+export const InviteeBanner: React.FC<InviteeBannerProps> = ({ inviteeName }) => {
   return (
     <div className="w-full bg-gradient-to-r from-brand-rose/40 via-brand-rose/80 to-brand-rose/40 border-y border-brand-lavender/30 py-12 px-6 relative overflow-hidden shadow-sm">
       {/* Decorative background glows */}
@@ -28,16 +27,20 @@ export const InviteeBanner: React.FC<InviteeBannerProps> = ({ inviteeName, event
             <Sparkles className="w-4 h-4 text-brand-plum animate-pulse" />
           </div>
 
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-['Great_Vibes',_cursive] text-rose-gold px-2 mb-4 drop-shadow-sm font-normal py-2 leading-relaxed">
+          <p className="text-stone-600 font-serif italic text-lg sm:text-xl">
+            We cordially invite
+          </p>
+
+          <h2 className="text-[2.6rem] sm:text-6xl lg:text-7xl max-w-full break-words font-['Great_Vibes',_cursive] text-rose-gold px-2 my-1 drop-shadow-sm font-normal py-2 leading-relaxed">
             {inviteeName}
           </h2>
 
           <div className="flex items-center gap-4 justify-center max-w-xl mx-auto">
-            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-brand-plum/40" />
+            <div className="h-[1px] w-10 sm:w-12 bg-gradient-to-r from-transparent to-brand-plum/40" />
             <p className="text-stone-600 font-serif italic text-lg sm:text-xl">
-              We joyfully invite you to celebrate <span className="text-brand-plum font-semibold">{eventLabel}</span> with us.
+              to celebrate our special day with us.
             </p>
-            <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-brand-plum/40" />
+            <div className="h-[1px] w-10 sm:w-12 bg-gradient-to-l from-transparent to-brand-plum/40" />
           </div>
 
           <Heart className="w-5 h-5 text-brand-plum mt-6 fill-brand-lavender/20 animate-pulse" />

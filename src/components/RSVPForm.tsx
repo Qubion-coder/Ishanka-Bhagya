@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle, Loader2, Heart, Sparkles } from 'lucide-react';
 import { toast } from 'sonner';
+import { RSVP_SCRIPT_URL } from '../config/wedding';
 
 interface RSVPFormProps {
   inviteeName?: string;
@@ -20,7 +21,6 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
     thoughts: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbxyOLqbPCF84tUg299jIyA0GuebtYFra-3C-CXxzE851QIQkOs1RRrqBKyYqP6NCSO-/exec";
 
   useEffect(() => {
     if (inviteeName) {
@@ -30,19 +30,23 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!RSVP_SCRIPT_URL) {
+      toast.error('RSVP is not connected yet. Please contact the couple directly.');
+      return;
+    }
     setStatus('loading');
 
     try {
-
       const payload = new FormData();
-      payload.append('sheet', 'RSVP');
       payload.append('fullName', formData.fullName);
       payload.append('attendance', formData.attendance);
-      payload.append('guests', formData.attendance === 'yes' ? formData.guests : '0'); 
+      payload.append('guests', formData.attendance === 'yes' ? formData.guests : '0');
       payload.append('thoughts', formData.thoughts);
-      payload.append('dietaryNotes', formData.thoughts); // Fallback for old sheet column
+      payload.append('invitedAs', inviteeName);
+      payload.append('link', window.location.href);
 
-      await fetch(scriptUrl, {
+      // Apps Script does not send CORS headers, so the response is opaque; a network failure still throws.
+      await fetch(RSVP_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         body: payload,
