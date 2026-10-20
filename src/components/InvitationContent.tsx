@@ -65,15 +65,25 @@ export function InvitationContent({
 
       <DeferredMount active={active} delay={120} minHeight="40vh">
         <div className="py-24 sm:py-32 bg-gradient-to-b from-brand-blush via-white to-brand-blush relative overflow-hidden">
-          {/* Faint couple photo watermark, toned to ivory and faded into the section edges */}
-          <div className="absolute inset-x-0 top-0 h-[820px] lg:inset-0 lg:h-auto pointer-events-none" aria-hidden="true">
-            <img
+          {/* Couple photo: shown in full colour first, then settles into an ivory-toned watermark as the names appear */}
+          <div className="absolute inset-x-0 top-0 h-[640px] lg:inset-0 lg:h-auto pointer-events-none" aria-hidden="true">
+            <motion.img
               src="/pre/WhatsApp Image 2026-10-15 at 18.49.44.jpeg"
               alt=""
-              loading="lazy"
-              className="w-full h-full object-cover object-[center_35%] opacity-[0.32] grayscale-[0.4] sepia-[0.3]"
+              className="w-full h-full object-cover object-[center_35%]"
+              style={{ height: '100%' }}
+              initial={{ opacity: 1, filter: 'grayscale(0) sepia(0)' }}
+              whileInView={{ opacity: 0.32, filter: 'grayscale(0.4) sepia(0.3)' }}
+              viewport={{ once: true, amount: 0.3, margin: '0px 0px -15% 0px' }}
+              transition={{ delay: 1.5, duration: 1.4, ease: 'easeInOut' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-brand-blush/50 via-transparent to-brand-blush" />
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-b from-brand-blush/50 via-transparent to-brand-blush"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.3, margin: '0px 0px -15% 0px' }}
+              transition={{ delay: 1.5, duration: 1.4, ease: 'easeInOut' }}
+            />
           </div>
 
           <CoupleDetails />

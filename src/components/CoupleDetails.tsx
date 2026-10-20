@@ -9,11 +9,12 @@ export const CoupleDetails: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-radial from-brand-lavender/15 to-transparent rounded-full blur-[100px] pointer-events-none z-0" />
 
       <div className="text-center mb-16 sm:mb-24 relative z-10">
+        {/* Waits for the couple photo behind it to fade into a watermark */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
+          viewport={{ once: true, margin: '0px 0px -15% 0px' }}
+          transition={{ duration: 1, delay: 2.4 }}
         >
           <img
             src="/WhatsApp_Image_2026-10-14_at_20.56.04__1_-removebg-preview.png"
