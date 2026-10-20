@@ -38,7 +38,7 @@ export const Location: React.FC<LocationProps> = ({ event = 'both' }) => {
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 className={`w-full lg:w-[45%] flex z-20 ${isReversed ? 'lg:-translate-x-12' : 'lg:translate-x-12'}`}
               >
-                <div className="w-full h-full bg-white/90 backdrop-blur-2xl p-10 sm:p-14 lg:p-16 rounded-[2.5rem] shadow-[0_30px_60px_rgba(183,110,121,0.15)] border border-brand-lavender/30 relative overflow-hidden group flex flex-col justify-center">
+                <div className="w-full h-full bg-white/90 backdrop-blur-2xl p-10 sm:p-14 lg:p-16 rounded-[2.5rem] shadow-[0_30px_60px_rgba(181,128,111,0.15)] border border-brand-lavender/30 relative overflow-hidden group flex flex-col justify-center">
                   
                   {/* Elegant top border gradient */}
                   <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-rose via-brand-lavender to-brand-plum" />
@@ -76,7 +76,7 @@ export const Location: React.FC<LocationProps> = ({ event = 'both' }) => {
                           rel="noopener noreferrer"
                           className="rg-button inline-flex items-center gap-3 px-8 py-4 rounded-full font-sans tracking-[0.2em] text-xs uppercase transition-all duration-300 active:scale-95 group/btn"
                         >
-                          <Navigation className="w-4 h-4 text-[#FBE2D2] group-hover/btn:rotate-45 transition-transform duration-300" />
+                          <Navigation className="w-4 h-4 text-[#F6EEE0] group-hover/btn:rotate-45 transition-transform duration-300" />
                           Open Live Location
                         </a>
                       </div>

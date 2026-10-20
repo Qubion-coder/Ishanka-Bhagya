@@ -38,7 +38,7 @@ export const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="uppercase tracking-[0.4em] text-[10px] sm:text-xs font-semibold mb-4 text-[#9A5B62] text-center font-['Georgia',_serif]"
+          className="uppercase tracking-[0.4em] text-[10px] sm:text-xs font-semibold mb-4 text-[#8C6455] text-center font-['Georgia',_serif]"
         >
           The countdown
         </motion.span>
@@ -73,7 +73,7 @@ export const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
                   {String(item.value).padStart(2, '0')}
                 </span>
               </div>
-              <span className="font-['Cormorant_Garamond',_serif] text-[9px] sm:text-[11px] uppercase tracking-[0.3em] font-semibold text-[#9A5B62]">
+              <span className="font-['Cormorant_Garamond',_serif] text-[9px] sm:text-[11px] uppercase tracking-[0.3em] font-semibold text-[#8C6455]">
                 {item.label}
               </span>
             </div>

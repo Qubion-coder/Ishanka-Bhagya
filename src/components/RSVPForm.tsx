@@ -68,7 +68,7 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="glass p-6 sm:p-10 lg:p-12 rounded-[2.5rem] sm:rounded-[3rem] border border-white/40 shadow-[0_30px_60px_rgba(183,110,121,0.1)] relative overflow-hidden bg-white/60 backdrop-blur-3xl lg:flex items-center gap-10 lg:gap-16"
+        className="glass p-6 sm:p-10 lg:p-12 rounded-[2.5rem] sm:rounded-[3rem] border border-white/40 shadow-[0_30px_60px_rgba(181,128,111,0.1)] relative overflow-hidden bg-white/60 backdrop-blur-3xl lg:flex items-center gap-10 lg:gap-16"
       >
         {/* Soft top border line */}
         <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-rose via-brand-plum/80 to-brand-rose" />
@@ -109,7 +109,7 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
                 exit={{ opacity: 0, scale: 0.95 }}
                 className="text-center py-16 px-8 bg-white/70 rounded-[2rem] border border-white shadow-xl"
               >
-                <div className="w-24 h-24 bg-[#FBE2D2]/80 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner border border-[#F2C4A8]">
+                <div className="w-24 h-24 bg-[#F6EEE0]/80 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner border border-[#E6D3BC]">
                   <CheckCircle className="w-12 h-12 text-brand-plum" />
                 </div>
                 <h3 className="text-4xl font-display text-stone-800 mb-4 tracking-tight drop-shadow-sm">With Gratitude</h3>

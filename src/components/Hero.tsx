@@ -91,7 +91,7 @@ export const Hero: React.FC<HeroProps> = ({ event = 'both', inviteeName, onIntro
             transition={{ duration: 1 }}
             className="absolute inset-0 z-10 pointer-events-none"
           >
-            <div className="absolute inset-5 sm:inset-8 border border-brand-plum/30 rounded-3xl shadow-[inset_0_0_30px_rgba(183,110,121,0.1)]" />
+            <div className="absolute inset-5 sm:inset-8 border border-brand-plum/30 rounded-3xl shadow-[inset_0_0_30px_rgba(181,128,111,0.1)]" />
             <div className="absolute inset-6 sm:inset-9 border border-brand-plum/15 rounded-[1.3rem]" />
           </motion.div>
         )}

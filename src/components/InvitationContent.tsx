@@ -46,7 +46,7 @@ export function InvitationContent({
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.5, duration: 0.6 }}
         onClick={onToggleMusic}
-        className="fixed top-6 right-6 z-50 w-12 sm:w-14 h-12 sm:h-14 bg-[#FFFBF3]/80 backdrop-blur-md rounded-full shadow-[0_8px_30px_rgba(183,110,121,0.25)] flex items-center justify-center border border-[#B76E79]/40 ring-4 ring-[#F6CDB5]/30 text-brand-plum hover:scale-105 transition-all duration-300"
+        className="fixed top-6 right-6 z-50 w-12 sm:w-14 h-12 sm:h-14 bg-[#FFFBF3]/80 backdrop-blur-md rounded-full shadow-[0_8px_30px_rgba(181,128,111,0.25)] flex items-center justify-center border border-[#B5806F]/40 ring-4 ring-[#EAD5BE]/30 text-brand-plum hover:scale-105 transition-all duration-300"
       >
         {isMusicPlaying ? (
           <Music className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -71,7 +71,7 @@ export function InvitationContent({
       </DeferredMount>
 
       <DeferredMount active={active} delay={180} minHeight="40vh">
-        <div className="py-24 sm:py-32 bg-gradient-to-b from-brand-blush via-[#FFF6EE] to-brand-blush relative overflow-hidden">
+        <div className="py-24 sm:py-32 bg-gradient-to-b from-brand-blush via-[#FBF6EC] to-brand-blush relative overflow-hidden">
           <CeremonyDetails event={eventParam} />
         </div>
       </DeferredMount>
@@ -103,7 +103,7 @@ export function InvitationContent({
 
 
       <DeferredMount active={active} delay={520}>
-        <footer className="py-12 bg-gradient-to-b from-brand-blush to-[#FBE2D2]/70 border-t border-brand-lavender/40 text-center relative overflow-hidden mt-10">
+        <footer className="py-12 bg-gradient-to-b from-brand-blush to-[#F6EEE0]/70 border-t border-brand-lavender/40 text-center relative overflow-hidden mt-10">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-lavender/10 blur-[80px] rounded-full pointer-events-none" />
           <img
             src="/WhatsApp_Image_2026-10-14_at_20.56.04__1_-removebg-preview.png"
@@ -123,7 +123,7 @@ export function InvitationContent({
             <a 
               target="_blank" 
               rel="noreferrer" 
-              className="text-[#C08A7D] hover:text-brand-plum font-bold underline decoration-[#C08A7D]/40 hover:decoration-brand-plum/40 underline-offset-4 transition-colors" 
+              className="text-[#C49A85] hover:text-brand-plum font-bold underline decoration-[#C49A85]/40 hover:decoration-brand-plum/40 underline-offset-4 transition-colors" 
               href="https://wa.me/94707819074"
             >
               Invitemint

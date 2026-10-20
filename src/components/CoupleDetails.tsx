@@ -52,7 +52,7 @@ export const CoupleDetails: React.FC = () => {
           </div>
 
           <div className="mb-4 flex flex-col items-center lg:items-end relative z-10">
-            <span className="text-[#9A5B62] uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Groom</span>
+            <span className="text-[#8C6455] uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Groom</span>
             <h3 className="text-4xl sm:text-5xl font-['Cormorant_Garamond',_serif] text-stone-800 mb-2 drop-shadow-sm">Bhagya</h3>
             <p className="text-stone-700 font-century text-xs mb-2"></p>
             <p className="text-stone-500/90 font-serif italic text-base sm:text-lg">Loving Son of Mr. B.P. Keerthirathna &amp; Mrs. Kumudini Piyadigama</p>
@@ -77,7 +77,7 @@ export const CoupleDetails: React.FC = () => {
             {/* Top Left - Arch top */}
             <motion.div 
               whileHover={{ scale: 1.05, rotate: -2, zIndex: 10 }}
-              className="relative w-full h-full rounded-t-full rounded-bl-3xl rounded-br-lg overflow-hidden shadow-[0_15px_30px_rgba(183,110,121,0.2)] border-[3px] border-white transform transition-all duration-500"
+              className="relative w-full h-full rounded-t-full rounded-bl-3xl rounded-br-lg overflow-hidden shadow-[0_15px_30px_rgba(181,128,111,0.2)] border-[3px] border-white transform transition-all duration-500"
             >
               <img src="/pre/WhatsApp Image 2026-10-15 at 09.35.11.jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-brand-plum/10 mix-blend-overlay"></div>
@@ -86,7 +86,7 @@ export const CoupleDetails: React.FC = () => {
             {/* Top Right - Offset down slightly */}
             <motion.div 
               whileHover={{ scale: 1.05, rotate: 2, zIndex: 10 }}
-              className="relative w-full h-full rounded-t-full rounded-br-3xl rounded-bl-lg overflow-hidden shadow-[0_15px_30px_rgba(183,110,121,0.2)] border-[3px] border-white transform translate-y-6 sm:translate-y-8 transition-all duration-500"
+              className="relative w-full h-full rounded-t-full rounded-br-3xl rounded-bl-lg overflow-hidden shadow-[0_15px_30px_rgba(181,128,111,0.2)] border-[3px] border-white transform translate-y-6 sm:translate-y-8 transition-all duration-500"
             >
               <img src="/pre/WhatsApp Image 2026-10-15 at 18.49.44.jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-brand-plum/10 mix-blend-overlay"></div>
@@ -95,7 +95,7 @@ export const CoupleDetails: React.FC = () => {
             {/* Bottom Left - Arch bottom */}
             <motion.div 
               whileHover={{ scale: 1.05, rotate: -1, zIndex: 10 }}
-              className="relative w-full h-full rounded-b-full rounded-tl-3xl rounded-tr-lg overflow-hidden shadow-[0_15px_30px_rgba(183,110,121,0.2)] border-[3px] border-white transform -translate-y-4 sm:-translate-y-6 transition-all duration-500"
+              className="relative w-full h-full rounded-b-full rounded-tl-3xl rounded-tr-lg overflow-hidden shadow-[0_15px_30px_rgba(181,128,111,0.2)] border-[3px] border-white transform -translate-y-4 sm:-translate-y-6 transition-all duration-500"
             >
               <img src="/pre/WhatsApp Image 2026-10-16 at 22.20.27 (1).jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-brand-plum/10 mix-blend-overlay"></div>
@@ -104,7 +104,7 @@ export const CoupleDetails: React.FC = () => {
             {/* Bottom Right - Arch bottom */}
             <motion.div 
               whileHover={{ scale: 1.05, rotate: 3, zIndex: 10 }}
-              className="relative w-full h-full rounded-b-full rounded-tr-3xl rounded-tl-lg overflow-hidden shadow-[0_15px_30px_rgba(183,110,121,0.2)] border-[3px] border-white transform transition-all duration-500"
+              className="relative w-full h-full rounded-b-full rounded-tr-3xl rounded-tl-lg overflow-hidden shadow-[0_15px_30px_rgba(181,128,111,0.2)] border-[3px] border-white transform transition-all duration-500"
             >
               <img src="/pre/WhatsApp Image 2026-10-16 at 22.20.27.jpeg" alt="Couple" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-brand-plum/10 mix-blend-overlay"></div>
@@ -125,7 +125,7 @@ export const CoupleDetails: React.FC = () => {
           className="text-center lg:text-left flex-1 lg:pl-10 order-2 lg:order-3"
         >
           <div className="mb-4 flex flex-col items-center lg:items-start">
-            <span className="text-[#9A5B62] uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block mt-28 sm:mt-36 lg:mt-0">The Bride</span>
+            <span className="text-[#8C6455] uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block mt-28 sm:mt-36 lg:mt-0">The Bride</span>
             <h3 className="text-4xl sm:text-5xl font-['Cormorant_Garamond',_serif] text-stone-800 mb-2 drop-shadow-sm">Ishanka</h3>
             <p className="text-stone-700 font-century text-xs mb-2"></p>
             <p className="text-stone-500/90 font-serif italic text-base sm:text-lg">Loving Daughter of Mr. Lal Seelawansha &amp; Mrs. Sandhya Amarathunga</p>
