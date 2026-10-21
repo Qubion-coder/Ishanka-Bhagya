@@ -1,11 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 
 interface CountdownProps {
   targetDate: Date;
 }
 
 export const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
+  const fountainRef = useRef<HTMLVideoElement>(null);
+  const fountainInView = useInView(fountainRef, { margin: '0px 0px -10% 0px' });
+
+  // Only play the milk fountain loop while it is on screen, to save battery and data on phones.
+  useEffect(() => {
+    const video = fountainRef.current;
+    if (!video) return;
+    if (fountainInView) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  }, [fountainInView]);
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -88,11 +102,21 @@ export const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
         transition={{ duration: 0.8, delay: 0.6 }}
         className="mt-12 sm:mt-16 w-full max-w-sm mx-auto relative z-10 px-4"
       >
-        <img 
-          src="/decor/milk-fountain-pour.webp" 
-          alt="Traditional milk fountain" 
-          loading="lazy"
+        <video
+          ref={fountainRef}
+          src="/decor/milk-fountain.mp4"
+          poster="/decor/milk-fountain-poster.jpg"
+          aria-label="Traditional milk fountain"
           className="w-full h-auto"
+          style={{
+            WebkitMaskImage: 'radial-gradient(ellipse 72% 70% at 50% 50%, #000 62%, transparent 100%)',
+            maskImage: 'radial-gradient(ellipse 72% 70% at 50% 50%, #000 62%, transparent 100%)',
+          }}
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          disablePictureInPicture
         />
       </motion.div>
 
